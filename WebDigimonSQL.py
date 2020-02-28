@@ -16,9 +16,7 @@ for i in table_tr:
     list_tampung = []
     table_td = i.find_all("td")
     for a in table_td[1:]:
-        tampung = a.text 
-        if "\xa0 " in tampung: 
-            tampung = tampung.replace(u'\xa0 ',u'')
+        tampung = a.text.replace(u'\xa0 ',u'')
         list_tampung.append(tampung)
     list_data.append(list_tampung)
 
@@ -39,19 +37,11 @@ for i in list_data:
 #CREATE LIST OF TUPLES 
 list_tuple = [tuple(l) for l in list_data]
 
-# #CREATE LIST OF DICTIONARIES
-# list_data_json = [] 
-# for i in list_data[1:]: 
-#     tes = zip(list_header, i)
-#     dicttes = dict(tes)
-#     list_data_json.append(dicttes)
-
-
 dbDigimon = mysql.connector.connect( 
     host = 'localhost', 
     port = '3306', 
     user = 'root', 
-    passwd = 'tenebrae',
+    passwd = '***',
     database = 'digimon'
 )
 

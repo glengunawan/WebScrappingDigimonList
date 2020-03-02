@@ -22,7 +22,7 @@ for i in table_tr:
     list_tampung = []
     table_td = i.find_all("td") 
     for a in table_td:
-        tampung = a.text.replace(u'\xa0 ',u'')
+        tampung = a.text.replace(u'\xa0',u'')
         list_tampung.append(tampung)
     list_data.append(list_tampung)
 
